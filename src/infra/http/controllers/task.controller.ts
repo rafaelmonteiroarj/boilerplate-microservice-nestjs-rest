@@ -14,13 +14,7 @@ import { CreateTask } from '@core/use-cases/create-task';
 import { HttpTaskMapper } from '@infra/http/mappers/http-task-mapper';
 import { GetAllTasks } from '@core/use-cases/list-task';
 import { CacheInterceptor } from '@nestjs/cache-manager';
-import {
-  ApiOkResponse,
-  ApiOperation,
-  ApiResponse,
-  ApiTags,
-} from '@nestjs/swagger';
-import { Task as TaskEntity } from '@/src/@core/entities/task.entity';
+import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('tasks')
 @Controller('tasks')

@@ -2,7 +2,6 @@ import {
   BadRequestException,
   CallHandler,
   ExecutionContext,
-  HttpException,
   Injectable,
   NestInterceptor,
   RequestTimeoutException,
