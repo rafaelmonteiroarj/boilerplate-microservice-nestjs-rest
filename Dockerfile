@@ -5,8 +5,14 @@ WORKDIR /app
 
 # arg vai definir a porta 6000, fazendo a aplicação expor essa porta 
 ARG PORT=3000
+ARG POSTGRES_USER=root
+ARG POSTGRES_PASSWORD=123456
+ARG POSTGRES_DB=postgres
+ARG POSTGRES_HOST=postgres
+ARG DATABASE_URL="postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:5432/${POSTGRES_DB}?schema=public"
 # com ENV definimos uma variavel de ambiente que pode ser lida dentro do container 
 ENV PORT=$PORT
+ENV DATABASE_URL=$DATABASE_URL
 
 # Devemos também sinalizar para o contianer que exponha para fora a porta 3000. 
 # tirando a necessidade de quando fizermos o run do container termos que mapear via terminal

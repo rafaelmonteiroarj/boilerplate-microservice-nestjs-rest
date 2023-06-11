@@ -1,18 +1,11 @@
-import { CacheInterceptor } from '@nestjs/cache-manager';
-import {
-  Controller,
-  Get,
-  HttpStatus,
-  Res,
-  UseInterceptors,
-} from '@nestjs/common';
+// import { CacheInterceptor } from '@nestjs/cache-manager';
+import { Controller, Get, HttpStatus, Res } from '@nestjs/common';
 import { ApiOkResponse } from '@nestjs/swagger';
 import { ServerResponse } from 'http';
 import { HttpMapper } from './infra/http/mappers/http-mapper';
 import { HttpHealthMapper } from './infra/http/mappers/http-health-mapper';
 
 @Controller()
-@UseInterceptors(CacheInterceptor)
 export class AppController {
   @Get()
   @ApiOkResponse({ description: 'api description', type: HttpMapper })

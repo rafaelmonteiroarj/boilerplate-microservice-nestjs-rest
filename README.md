@@ -46,7 +46,18 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Running the app by Docker
+## Running the app by Docker or Docker Composer
+
+```bash
+docker run -d \
+	--name postgres \
+  -e POSTGRES_USER=root \
+	-e POSTGRES_PASSWORD=123456 \
+	-e PGDATA=/data/postgres \
+	-v postgres:/data/postgres \
+  -p 5432:5432 \
+	postgres
+```
 
 ```bash
 $ docker-compose up -d
