@@ -6,7 +6,7 @@ import {
   NestInterceptor,
   RequestTimeoutException,
 } from '@nestjs/common';
-import { logger } from '@shared/functions';
+import { logger } from '@utils/functions';
 import { Observable, TimeoutError, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 

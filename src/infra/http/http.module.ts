@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 
+import { CreateTask } from '@/src/@core/use-cases/create-task';
+import { GetAllTasks } from '@/src/@core/use-cases/list-task';
 import { TaskController } from '@infra/http/controllers/task.controller';
-import { CreateTask, GetAllTasks } from '@core/use-cases';
-import { DatabaseModule } from '@infra/database/database.module';
-import { PrismaTaskRepository } from '@infra/database/prisma/task.repository';
-import { PrismaService } from '@infra/database/prisma/prisma.service';
+import { DatabaseModule } from '@infra/persistence/database.module';
+import { PrismaService } from '@infra/persistence/prisma/prisma.service';
+import { PrismaTaskRepository } from '@infra/persistence/prisma/task.repository';
 
 @Module({
   imports: [DatabaseModule],

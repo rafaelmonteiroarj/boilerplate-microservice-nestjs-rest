@@ -21,7 +21,7 @@
       "@/*": ["./*"],
       "@core/*": ["./src/@core/*"],
       "@infra/*": ["./src/infra/*"],
-      "@shared/*": ["./src/shared/*"],
+      "@utils/*": ["./src/utils/*"],
       "@test/*": ["./test/*"]
     }
   }

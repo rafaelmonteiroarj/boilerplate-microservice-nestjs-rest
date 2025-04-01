@@ -1,10 +1,10 @@
-import { Controller, Post, Body, Res, HttpStatus, Get } from '@nestjs/common';
+import { Body, Controller, Get, HttpStatus, Post, Res } from '@nestjs/common';
 import { Task } from '@prisma/client';
 
-import { CreateTaskDto } from '@infra/http/dtos/create-task-dto';
 import { CreateTask } from '@core/use-cases/create-task';
-import { HttpTaskMapper } from '@infra/http/mappers/http-task-mapper';
 import { GetAllTasks } from '@core/use-cases/list-task';
+import { CreateTaskDto } from '@infra/http/dtos/create-task-dto';
+import { HttpTaskMapper } from '@infra/http/mappers/http-task-mapper';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('tasks')

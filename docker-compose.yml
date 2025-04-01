@@ -1,24 +1,24 @@
 version: '3.5'
 
 services:
-  api:
-    build: 
-      dockerfile: Dockerfile
-      context: .
-    container_name: backend-api
-    volumes:
-      - .:/app
-    environment:
-      DATABASE_URL: ${DATABASE_URL:-postgresql://root:123456@postgres:5432/postgres?schema=public}
-    ports:
-      - "3000:3000"
-    networks:
-      - network-app
-    depends_on:
-      - "postgres"
-      
-  postgres:
-    container_name: postgres
+  # arjonas-api:
+  #   build:
+  #     dockerfile: Dockerfile
+  #     context: .
+  #   container_name: arjonas-api
+  #   volumes:
+  #     - .:/app
+  #   environment:
+  #     DATABASE_URL: ${DATABASE_URL:-postgresql://root:123456@postgres:5432/postgres?schema=public}
+  #   ports:
+  #     - '3000:3000'
+  #   networks:
+  #     - network-app
+  #   depends_on:
+  #     - arjonas-postgres
+
+  arjonas-postgres:
+    container_name: arjonas-postgres
     image: postgres
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-root}
@@ -27,9 +27,9 @@ services:
       POSTGRES_HOST: ${POSTGRES_HOST:-postgres}
       PGDATA: /data/postgres
     volumes:
-       - postgres:/data/postgres
+      - postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - '5432:5432'
     networks:
       - network-app
     restart: unless-stopped
@@ -39,4 +39,5 @@ networks:
     driver: bridge
 
 volumes:
-    postgres:
+  postgres:
+    driver: local

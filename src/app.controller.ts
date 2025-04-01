@@ -2,8 +2,8 @@
 import { Controller, Get, HttpStatus, Res } from '@nestjs/common';
 import { ApiOkResponse } from '@nestjs/swagger';
 import { ServerResponse } from 'http';
-import { HttpMapper } from './infra/http/mappers/http-mapper';
 import { HttpHealthMapper } from './infra/http/mappers/http-health-mapper';
+import { HttpMapper } from './infra/http/mappers/http-mapper';
 
 @Controller()
 export class AppController {

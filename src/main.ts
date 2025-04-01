@@ -1,12 +1,12 @@
-import { NestFactory } from '@nestjs/core';
 import { RequestMethod, ValidationPipe } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import helmet from 'helmet';
 
-import { AppModule } from './app.module';
 import { HttpExceptionFilter } from '@infra/interceptors/http-exception.filter';
-import { logger } from '@shared/functions';
 import { LoggingInterceptor } from '@infra/interceptors/logging.interceptor';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { logger } from '@utils/functions';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
   const PORT = 3000;

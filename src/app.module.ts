@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 
-import { AppController } from './app.controller';
 import { HttpModule } from '@infra/http/http.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [HttpModule],

@@ -1,5 +1,5 @@
+import { Replace } from '@utils/functions';
 import { randomUUID } from 'crypto';
-import { Replace } from '@shared/functions';
 
 export interface TaskProps {
   title: string;

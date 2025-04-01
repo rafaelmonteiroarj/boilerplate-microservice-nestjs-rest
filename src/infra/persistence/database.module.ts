@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 
-import { PrismaService } from '@infra/database/prisma/prisma.service';
 import { TaskRepository } from '@core/repositories/task.repository';
-import { PrismaTaskRepository } from '@infra/database/prisma/task.repository';
+import { PrismaService } from '@infra/persistence/prisma/prisma.service';
+import { PrismaTaskRepository } from '@infra/persistence/prisma/task.repository';
 
 @Module({
   providers: [
